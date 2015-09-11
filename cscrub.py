@@ -19,7 +19,10 @@ if(__name__=="__main__"):
 	## think there must be a better option available than this, but I havent
 	## tested bookrs support for non-english special characters
 	
-	## fixing the double quotes is already a huge boost as far as I am concerned	
+	## fixing the double quotes is already a huge boost in readability
+	## as far as I am concerned	
+	fileContents = fileContents.replace("…", '...')	
+	
 	fileTarget.close()
 	
 	fileTarget = open(filename, 'w')
