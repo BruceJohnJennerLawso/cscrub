@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 ## cscrub.py ###################################################################
 ## scrubs characters from text files so bookr ##################################
 ## displays things properly ####################################################
@@ -10,11 +11,15 @@ if(__name__=="__main__"):
 	fileTarget = open(filename, 'r')	
 	
 	fileContents = fileTarget.read()
-	fileContents.replace("’", "'")
-	fileContents.replace("“", """"""")
-	fileContents.replace("”", """"""")
+	fileContents = fileContents.replace("’", "'")
+	fileContents = fileContents.replace("“", '"')
+	fileContents = fileContents.replace("”", '"')
+	fileContents = fileContents.replace("—", '-')	
+	fileContents = fileContents.replace("è", 'e')
+	## think there must be a better option available than this, but I havent
+	## tested bookrs support for non-english special characters
 	
-	
+	## fixing the double quotes is already a huge boost as far as I am concerned	
 	fileTarget.close()
 	
 	fileTarget = open(filename, 'w')
