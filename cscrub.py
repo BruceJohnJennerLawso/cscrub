@@ -15,9 +15,12 @@ if(__name__=="__main__"):
 	fileContents = fileContents.replace("“", '"')
 	fileContents = fileContents.replace("”", '"')
 	fileContents = fileContents.replace("—", '-')	
+	fileContents = fileContents.replace("–", '-')
+	## not the same character, although they do look quite similar
+	fileContents = fileContents.replace("‘", "'")
+			
 	fileContents = fileContents.replace("è", 'e')
 	fileContents = fileContents.replace("é", 'e')
-	fileContents = fileContents.replace("‘", "'")	
 	## think there must be a better option available than this, but I havent
 	## tested bookrs support for non-english special characters
 	
