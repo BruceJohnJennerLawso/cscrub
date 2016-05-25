@@ -6,8 +6,8 @@ if [ -z "$1" ];
 			if [[ -d "$d" ]]; then
 				echo "$d"
 				printf "$PWD/$d"
-				$HOME/bin/epubcon.sh "$d"
-				epubdown.sh "$d" 1
+				$HOME/bin/txtfix.sh "$d"
+				txtfixdown.sh "$d" 1
 			fi
 		done
 else
@@ -16,14 +16,14 @@ else
 		if [[ -d "$d" ]]
 			then
 				printf "$PWD/$d"
-				$HOME/bin/epubcon.sh "$PWD/$d"
+				$HOME/bin/txtfix.sh "$d"
 				for i in $(seq 1 $2); do
 					printf " - "
 				done
 				printf "$d\n "
 				depth=$2
 				((depth++))
-				epubdown.sh "$d" $depth
+				txtfixdown.sh "$d" $depth
 		fi
 	done
 fi
