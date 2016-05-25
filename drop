@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cp epubcon.sh epubdown.sh pdfcon.sh txtfix.sh $HOME/bin/
+## copy over needed files to the bin directory so we can execute them all over
+## the place
+mkdir $HOME/bin/py
+## I think this will just autofail if the directory is already created
+cp cscrub.py $HOME/bin/py/
+## copy the relevant python script into a subdirectory of bin
+
+
+exit 0
+
